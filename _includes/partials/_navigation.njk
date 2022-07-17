@@ -1,0 +1,10 @@
+<!-- Main Menu -->
+<nav class="main-menu navbar-expand-md navbar-light">
+<div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+    <ul class="navigation clearfix">
+        <li><a href="{{homepage[0].url}}">{{ 'home' | i18n }}</a></li>
+    {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+    </ul>
+</div>
+</nav>
+<!-- Main Menu End-->

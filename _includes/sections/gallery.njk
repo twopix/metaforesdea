@@ -1,0 +1,16 @@
+
+    <!-- Insta Gallery Section -->
+    <section class="insta-gallery">
+        <div class="insta-gallery-carousel love-carousel owl-theme owl-carousel" data-options='{"loop": false, "margin": 0, "autoheight":true, "lazyload":true, "nav": true, "dots": true, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 500, "responsive":{ "0" :{ "items": "1" },"600" :{ "items": "2" }, "768" :{ "items" : "3" }, "1024":{ "items" : "4" }, "1366":{ "items" : "4" }, "1500":{ "items" : "5" }, "1920":{ "items" : "6" }}}'>
+            {% for image in misc[locale].gallery %}
+            <!-- Gallery Item -->
+            <div class="gallery-item">
+                <div class="image-box">
+                    <figure class="image"><img class="lazy-image owl-lazy" src="/assets/images/resource/image-spacer-for-validation.png" data-src="{{image.photo}}?nf_resize=smartcrop&w=360&h=360" alt=""></figure>
+                    <div class="overlay-box"><a href="{{image.photo}}" title="{{image.title}}" data-caption="{{image.title}}" class="lightbox-image" data-fancybox="gallery"><span class="icon flaticon-instagram"></span></a></div>
+                </div>
+            </div>            
+            {% endfor %}
+        </div>
+    </section>
+    <!--End Gallery Section -->

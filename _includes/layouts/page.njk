@@ -1,0 +1,102 @@
+---
+layout: layouts/template
+---
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+        <div class="auto-container">
+            <div class="row clearfix">
+
+                <!--Content Side / Blog Sidebar-->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+                    <!--Blog Posts-->
+                    <div class="blog-post-detail">
+                        <div class="inner">
+                            <div class="content">
+                            {{ content | safe }}
+                            </div>
+                        </div>
+                        
+                        <div class="post-share-options clearfix">
+                            {# <div class="pull-left">
+                                <p>Tags : </p>
+                                <ul class="tags">
+                                    <li><a href="#">Children</a></li>
+                                    <li><a href="#">Volunteer</a></li>
+                                </ul>                               
+                            </div> #}
+
+                            <div class="social-links pull-right">
+                                <p>Share:</p>
+                                <ul class="social-icons">
+                                    <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-vimeo-v"></span></a></li>
+                                    <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+   
+
+                    
+                </div>
+                
+                <!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                    <aside class="sidebar">
+                        
+                        {# <!-- Search -->
+                        <div class="sidebar-widget search-box">
+                        	<h3 class="sidebar-title">Search</h3>
+                            <form method="post" action="contact.html">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" value="" placeholder="Search..." required>
+                                    <button type="submit"><span class="icon flaticon-search-1"></span></button>
+                                </div>
+                            </form>
+                        </div> #}
+
+                        <!-- Category Widget -->
+                        <div class="sidebar-widget categories">
+                            <h3 class="sidebar-title">{{ "information" | i18n }}</h3>
+                            <div class="widget-content">
+                                <ul>
+                                    
+                                    {% for page in collections.pages %}
+                                    {% if page.data.locale == locale %}
+                                        <li ><a href="{{page.url}}">{{page.data.title  }}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                </ul>
+                            </div>
+                        </div>
+                        
+
+
+                        <!-- Tags Widget -->
+                        {# <div class="sidebar-widget popular-tags">
+                            <h3 class="sidebar-title">Popular Tags</h3>
+                            <div class="widget-content">
+                            	<ul class="clearfix">
+                                    <li><a href="blog-single.html">Education</a></li>
+                                    <li><a href="blog-single.html">Olympiad</a></li>
+                                    <li><a href="blog-single.html">Children</a></li>
+                                    <li><a href="blog-single.html">Animals</a></li>
+                                    <li><a href="blog-single.html">Donations</a></li>
+                                    <li><a href="blog-single.html">Causes</a></li>
+                                    <li><a href="blog-single.html">Drawing</a></li>
+                                    <li><a href="blog-single.html">Art</a></li>
+                                </ul>
+                            </div>
+                        </div>  #}
+                                            
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Sidebar Page Container -->

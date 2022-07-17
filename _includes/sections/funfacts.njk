@@ -1,0 +1,65 @@
+<!-- Funfacts Section -->
+	<section class="facts-section">
+		<div class="auto-container">
+			<div class="inner-container">
+			
+				<!-- Fact Counter -->
+				<div class="fact-counter">
+					<div class="row clearfix">
+						<!--Column-->
+						<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+							<div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+								<div class="content">
+									<div class="count-outer count-box">
+										<span class="count-text" data-speed="2000" data-stop="2003">0</span>
+									</div>
+									<div class="counter-title">{{ "Est" | i18n }}</div>
+								</div>
+							</div>
+						</div>
+
+						<!--Column-->
+						<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+							<div class="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+								<div class="content">
+									<div class="count-outer count-box alternate">
+										<span class="count-text" data-speed="3000" data-stop="{{ collections.members | length }}">0</span>
+									</div>
+									<div class="counter-title">{{ "Members" | i18n }}</div>
+								</div>
+							</div>
+						</div>
+
+						<!--Column-->
+						<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+							<div class="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
+								<div class="content">
+									<div class="count-outer count-box">
+										<span class="count-text" data-speed="2000" data-stop="{{ collections.posts | filteredByPost_type('circulars', 'gr') | length }}">0</span>
+									</div>
+									<div class="counter-title">{{"Circulars" | i18n }}</div>
+								</div>
+							</div>
+						</div>
+
+						<!--Column-->
+						<div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+							<div class="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
+								<div class="content">
+									<div class="count-outer count-box">
+										<span class="count-text" data-speed="2000" data-stop="{{ collections.posts | filteredByPost_type('laws', 'gr') | length }}">0</span>
+									</div>
+									<div class="counter-title">{{ "Laws and Presidential Decrees" | i18n }} </div>
+								</div>
+							</div>
+						</div>
+						
+
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- End Funfacts Section -->
+	

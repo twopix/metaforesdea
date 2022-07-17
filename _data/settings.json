@@ -1,0 +1,56 @@
+{
+  "gr": {
+    "sliders": [
+      {
+        "quote": "Σύνδεσμος Τεχνικών Εταιριών Ανωτέρων Τάξεων",
+        "title": "ΣΤΕΑΤ",
+        "image": "/assets/images/slider/steat-construction.jpeg",
+        "url": "/about"
+      },
+      {
+        "quote": "Αποτελείται από 43 μεγαλύτερες τεχνικές επιχειρήσεις της Ελλάδας",
+        "title": "ΣΤΕΑΤ",
+        "image": "/assets/images/slider/steat-construction2.jpeg",
+        "url": "/about"
+      },
+      {
+        "quote": "Κύριος άξονας διείσδυσης στις αγορές των Βαλκανίων, της Ανατολικής Ευρώπης και της Μέσης Ανατολής",
+        "title": "ΣΤΕΑΤ",
+        "image": "/assets/images/slider/steat-construction3.jpg",
+        "url": "/about"
+      }
+    ],
+    "title": "ΣΤΕΑΤ ",
+    "description": "Ο Σύνδεσμος Τεχνικών Εταιριών Ανωτέρων Τάξεων ιδρύθηκε το 2003 και μέλη του αποτελούν οι 43 μεγαλύτερες τεχνικές επιχειρήσεις της Ελλάδας, κάτοχοι πτυχίων 7ης και 6ης τάξης, των οποίων η κατάταξη έγινε από το ΥΠΕΧΩΔΕ με κριτήρια οικονομικά, οργανωτικά και τεχνικής εμπειρίας.",
+    "email": "info@steat.gr",
+    "phone": "+30 210 36 17 109",
+    "gtag": "G-1LMGK78650"
+  },
+  "en": {
+    "sliders": [
+      {
+        "quote": "Association of Technical Companies of the Highest Classes",
+        "title": "STEAT",
+        "image": "/assets/images/slider/steat-construction.jpeg",
+        "url": "/en/about"
+      },
+      {
+        "quote": "Consisting of 43 major construction companies of Greece",
+        "title": "STEAT",
+        "image": "/assets/images/slider/steat-construction2.jpeg",
+        "url": "/en/about"
+      },
+      {
+        "quote": "Main axis of penetration in the markets of the Balkans, Eastern Europe and the Middle East",
+        "title": "STEAT",
+        "image": "/assets/images/slider/steat-construction3.jpg",
+        "url": "/en/about"
+      }
+    ],
+    "title": "STEAT",
+    "description": "The Association of Technical Companies of the Highest Classes was set up in 2003 consisting of 43 major construction companies of Greece, holders of certificate grade 7th and 6th and their classification was undertaken by the Ministry of Environment and Public Works with financial organizational and technical expertise criteria. ",
+    "email": "info@steat.gr",
+    "phone": "+30 210 36 17 109",
+    "gtag": "G-1LMGK78650"
+  }
+}

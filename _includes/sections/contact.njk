@@ -1,0 +1,91 @@
+<!--Contact Section-->
+<section class="contact-section">
+    <div class="outer-container clearfix">
+        
+      <div class="form-column clearfix">
+            <div class="inner clearfix">
+            
+                <div class="sec-title centered">
+                    <div class="sub-title">{{'inquiry' | i18n }}</div>
+                    <h2>{{'Leave a Message' | i18n }}</h2>
+                </div>
+                
+                <!-- Contact Form-->
+                <div class="col text-center" id="fomSubmitted"> </div>
+                <div class="contact-form">
+                    <form method="POST"  data-netlify-recaptcha="true" data-netlify="true" id="contact-form">
+                        <div class="row clearfix">                                    
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <input type="text" name="username" placeholder="{{'Your name' | i18n }}" required="">
+                            </div>
+                            
+                            <div class="col-md-6 col-sm-12 form-group">
+                                <input type="email" name="email" placeholder="{{'Your Email' | i18n }}" required="">
+                            </div>
+    
+                            <div class="col-md-12 col-sm-12 form-group">
+                                <textarea name="message" placeholder="{{'Write your message' | i18n }}"></textarea>
+                            </div>
+                            <div data-netlify-recaptcha="true"></div>
+                            <div class="col-md-12 col-sm-12 form-group text-center">
+                                <button class="theme-btn btn-style-one" name="submit-form"><span class="btn-title">{{'Send Message' | i18n }}</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+      </div>
+        
+        <div class="map-column clearfix">
+          <div class="map-canvas"
+                data-zoom="17"
+                data-lat="{{site.map.lat}} "
+                data-lng="{{site.map.lng}} "
+                data-type="roadmap"
+                data-hue="#ffc400"
+                data-title="{{site.name}}"
+                data-icon-path="/assets/images/icons/map-marker.png"
+                data-content="{{ site[locale].address }}<br><a href='mailto:{{site.email}}'>{{site.email}}</a>">
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<script>
+function fade(element) {
+    var op = 1;  // initial opacity
+    var fomSubmitted = document.getElementById('fomSubmitted');
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
+}
+
+const handleSubmit = (e) => {
+e.preventDefault()
+
+let myForm = document.getElementById('contact-form');
+let formContainer = document.getElementsByClassName('contact-form');
+let formData = new FormData(myForm)
+fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+}).then(() => {
+    console.log('Form successfully submitted'); 
+    fade(myForm);
+    fomSubmitted.textContent = 'Thank you! Form successfully submitted';
+    }
+).catch((error) =>
+    alert(error))
+}
+
+document.querySelector("form").addEventListener("submit", handleSubmit);
+</script>

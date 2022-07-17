@@ -1,0 +1,115 @@
+<!-- Main Footer -->
+<footer class="main-footer">
+    <div class="auto-container">
+        <!--Widgets Section-->
+        <div class="widgets-section">
+            <div class="row clearfix">
+
+                <!--Column-->
+                <div class="column col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget logo-widget">
+                        <div class="widget-content">
+                            <div class="footer-logo">
+                                <a href="/"><img class="lazy-image"
+                                        src="/assets/images/resource/image-spacer-for-validation.png"
+                                        data-src="/assets/images/steat-horizontal.svg" alt="" /></a>
+                            </div>
+                            <div class="text text-center">{{site[locale].metaTitle}}
+                            </div>
+                            {# <ul class="social-links clearfix text-center">
+                                {%- for name, link in site.social -%}
+                                <li><a href="{{link}}" target="_blank"><span class="fab fa-{{name}}-f"></span></a></li>
+                                {%- endfor -%}
+                            </ul> #}
+                        </div>
+                    </div>
+                </div>
+
+                <!--Column-->
+                <div class="column col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget links-widget">
+                        <div class="widget-content">
+                            <h3>{{'information' | i18n }}</h3>
+                            <ul>
+                                {%- for entry in navPages -%}{{ renderNavListItem(entry) }}{%- endfor -%}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Column-->
+                <div class="column col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget info-widget">
+                        <div class="widget-content">
+                            <h3>{{'contact' | i18n }}</h3>
+                            <ul class="contact-info">
+                                <li>{{site[locale].address}}</li>
+                                <li><a href="tel:{{ site.phone | replace(' ', '' ) }}"><span class="icon fa fa-phone-alt"></span> {{ site.phone }} </a></li>
+                                <li><a href="mailto:{{site.email}}"><span class="icon fa fa-envelope"></span> Email:&nbsp;{{site.email}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Column-->
+                <div class="column col-lg-3 col-md-6 col-sm-12">
+                    <div class="footer-widget news-widget">
+                        <div class="widget-content">
+                            <h3>{{'Latest news' | i18n}}</h3>
+                            <!--News Post-->
+                            {%- for post in collections.posts  | reverse -%}
+                            {%- set article = post.data -%}
+                            {%- if  locale == article.locale and loop.index0 < 2 -%}
+                            <div class="news">
+                                <div><a href="#">{{ article.title | truncate(46, true, "...")  }} </a></div>
+                                <div class="date text-right">{{ article.date  | postDate(site[locale].locales) }}</div>
+                            </div>
+                            {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="nav-box clearfix">
+                <div class="inner clearfix">
+                    <ul class="footer-nav clearfix">
+                        {%- set navPages = (navPages.pop(), navPages) -%}
+                        {%- for entry in navPages -%}{{ renderNavListItem(entry) }}
+                        {%- endfor -%}
+                    </ul>
+
+                    <div class="donate-link"><a href="{{ contactObj.url }}" class="theme-btn btn-style-one"><span
+                                class="btn-title">{{ contactObj.title }}</span></a></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="auto-container">
+
+            <!--Scroll to top-->
+            <div class="clearfix">
+                <div class="copyright">{{settings[locale].title}} &copy; 2021 - {% year %}. All Right Reserved. <br>Created by <a href="http://www.twopix.gr" target="_blank">(2p) Twopix</a></div>
+                <ul class="bottom-links">
+                {%- for page in collections.pages -%}
+                    {%- if page.data.locale == locale -%}
+                        <li ><a href="{{page.url}}">{{page.data.title  }}</a></li>
+                    {%- endif -%}
+                {%- endfor -%}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</div>
+<!--End pagewrapper-->
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="flaticon-up-arrow"></span></div>

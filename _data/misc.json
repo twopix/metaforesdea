@@ -1,0 +1,156 @@
+{
+  "gr": {
+    "gallery": [
+      {
+        "photo": "/assets/images/gallery/160221_TBT_6629.jpg",
+        "title": "Γέφυρα Τσακώνας"
+      },
+      {
+        "photo": "/assets/images/gallery/160221_TBT_6770.jpg",
+        "title": "Γέφυρα Τσακώνας"
+      },
+      {
+        "photo": "/assets/images/gallery/laurio.jpeg",
+        "title": "Λαύριο"
+      },
+      {
+        "photo": "/assets/images/gallery/pic (82).jpeg",
+        "title": "Image"
+      },
+      {
+        "photo": "/assets/images/gallery/auteco.jpg",
+        "title": "Auteco"
+      },
+      {
+        "photo": "/assets/images/gallery/avax.jpg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/avax2.jpg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/avax3.jpg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/national_airport_of_thessaloniki.jpg",
+        "title": "Αεροδρόμιο Θεσσαλονίκης"
+      },
+      {
+        "photo": "/assets/images/gallery/the_met_hotel.jpg",
+        "title": "The Met Hotel"
+      },
+      {
+        "photo": "/assets/images/gallery/pic (82).jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/DSC_0130.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/ak01.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/ak02.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/IMGP1976.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/fal01.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/DSC_0023.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/DSC_0021.jpeg",
+        "title": ""
+      }
+    ],
+    "title": "Gallery"
+  },
+  "en": {
+    "gallery": [
+      {
+        "photo": "/assets/images/gallery/160221_TBT_6629.jpg",
+        "title": "Tsakona Arch Bridge"
+      },
+      {
+        "photo": "/assets/images/gallery/160221_TBT_6770.jpg",
+        "title": "Tsakona Arch Bridge"
+      },
+      {
+        "photo": "/assets/images/gallery/auteco.jpg",
+        "title": "Auteco"
+      },
+      {
+        "photo": "/assets/images/gallery/laurio.jpeg",
+        "title": "Lavrio"
+      },
+      {
+        "photo": "/assets/images/gallery/pic (82).jpeg",
+        "title": "Image"
+      },
+      {
+        "photo": "/assets/images/gallery/avax.jpg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/avax2.jpg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/avax3.jpg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/national_airport_of_thessaloniki.jpg",
+        "title": "Thessaloniki Airport"
+      },
+      {
+        "photo": "/assets/images/gallery/the_met_hotel.jpg",
+        "title": "The Met Hotel"
+      },
+      {
+        "photo": "/assets/images/gallery/pic (82).jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/DSC_0130.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/ak01.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/ak02.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/IMGP1976.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/fal01.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/DSC_0023.jpeg",
+        "title": ""
+      },
+      {
+        "photo": "/assets/images/gallery/DSC_0021.jpeg",
+        "title": ""
+      }
+    ],
+    "title": "Gallery"
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ site[locale].metaTitle }} | {{title }}</title>
+  <!-- Stylesheets -->
+  <link href="/assets/css/bootstrap.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <!-- Responsive File -->
+  <link href="/assets/css/responsive.css" rel="stylesheet">
+  <!-- Color File -->
+  <link href="/assets/css/color.css" rel="stylesheet">
+  <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
+  <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon">
+  <!-- Responsive -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="msvalidate.01" content="7004B4D90A5333750091B770D10AC877" />
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+  <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+  <script type="text/javascript">
+    algoliasearchNetlify({
+      appId: 'AC3JBKORMW',
+      apiKey: '77e27f8a3f530d5bfc9d53dd9036458c',
+      siteId: '480fde0b-7a63-425a-b8d0-959e81d4c339',
+      branch: 'main',
+      selector: 'div#search',
+    });
+  </script>
+
+
+  <!-- open graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ metaTitle if metaTitle.length else title }}">
+  <meta property="og:image" content="{{ metaImage if metaImage.length else site[locale].metaImage}}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:description" content="{{ metaDescription if metaDescription.length else site[locale].metaDescription}}">
+  
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="{{ site.twitter }}">
+  <meta name="twitter:title" content="{{ metaTitle if metaTitle.length else title}}">
+  <meta name="twitter:description" content="{{ metaDescription if metaDescription.length else site[locale].metaDescription}}">
+  <meta name="twitter:image" content="{{ metaImage if metaImage.length else site[locale].metaImage}}">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{settings[locale].gtag}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{settings[locale].gtag}}');
+  </script>
+</head>
+<body>
+{%- set navPages = collections.all | eleventyNavigation(locale) -%}
+{# Get last from navigation object, wich is Contact #}
+{%- set contactObj = collections.all | eleventyNavigation(locale) | last -%}
+{%- set homepage = collections.all | eleventyNavigationBreadcrumb(locale, { includeSelf: true }) -%}
+
+{%- macro renderNavListItem(entry) -%}
+<li class="{%- if entry.url == page.url -%} current {%- endif -%}  {%- if entry.children.length -%} dropdown {%- endif -%} ">
+  <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+{%- if entry.children.length -%}
+  <ul>
+    {%- for child in entry.children -%}{{ renderNavListItem(child) }}{%- endfor -%}
+  </ul>
+{%- endif -%}
+</li>
+{%- endmacro -%}
+
+{%- include 'partials/_header.njk' -%}
+{%- block content -%}{%- endblock -%}
+{{ content | safe}}
+{%- include 'partials/_footer.njk' -%}
+
+
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/jquery-ui.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/owl.js"></script>
+<script src="/assets/js/appear.js"></script>
+<script src="/assets/js/wow.js"></script>
+<script src="/assets/js/lazyload.js"></script>
+<script src="/assets/js/scrollbar.js"></script>
+
+<script src="/assets/js/validate.js"></script>
+
+<script src="/assets/js/script.js"></script>
+
+<!--Google Map APi Key-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXa-qaIMb-7NBNMGB8FDcPGVoYq44U7u0"></script>
+<script src="/assets/js/map-script.js"></script>
+<!--End Google Map APi-->
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+
+</html>

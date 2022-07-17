@@ -1,0 +1,50 @@
+<!--Contact Info Section-->
+<section class="contact-info-section">
+    <div class="auto-container">
+        
+        <div class="sec-title centered">
+            <div class="sub-title">{{'contact' | i18n }}</div>
+            <h2>{{'Get In Touch' | i18n }}</h2>
+  
+        </div>
+        
+      <div class="info-boxes">
+            <div class="row clearfix">
+                <!--Info Box-->
+                <div class="info-box col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+          <div class="image-layer lazy-image" data-bg="url('/assets/images/resource/contact-image-1.jpg')"></div>
+                        <div class="icon-box"><span class="flaticon-home-location-marker"></span></div>
+                        <h4>{{ 'location' | i18n }} </h4>
+                        <ul>
+                          <li>{{ site[locale].address }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Info Box-->
+                <div class="info-box col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInUp" data-wow-delay="300ms">
+                        <div class="image-layer lazy-image" data-bg="url('/assets/images/resource/contact-image-2.jpg')"></div>
+                        <div class="icon-box"><span class="flaticon-phone-call"></span></div>
+                        <h4>{{'phone' | i18n }}</h4>
+                        <ul>
+                          <li><a href="tel:{{site.phone | replace(' ','')}}">{{ site.phone }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Info Box-->
+                <div class="info-box col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box wow fadeInUp" data-wow-delay="600ms">
+                        <div class="image-layer lazy-image" data-bg="url('/assets/images/resource/contact-image-3.jpg')"></div>
+                        <div class="icon-box"><span class="flaticon-email"></span></div>
+                        <h4>Email</h4>
+                        <ul>
+                            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+      </div>
+        
+    </div>
+</section>

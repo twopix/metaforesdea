@@ -1,0 +1,49 @@
+<!--News Section-->
+    <section class="news-section">
+    	<div class="top-rotten-curve"></div>
+        
+        <div class="auto-container">
+        	
+            <div class="title-box clearfix">
+                <div class="sec-title">
+                    <div class="sub-title">{{"Stay Tuned"| i18n}}</div>
+                    <h2>{{"Latest news"| i18n}}</h2>
+                </div>
+                
+                <div class="link"><a href="/announcements" class="theme-btn btn-style-one"><span class="btn-title">{{'All Articles' | i18n}}</span></a></div>
+            </div>
+            
+            <div class="row clearfix">
+            	<!--News Block-->
+                {# {% set regExp = r/\.[0-9a-z]+$/g %} #}
+                {# {% for post in collections.posts  | reverse %} #}
+                {% for post in collections.posts | filteredByLang(locale)  | reverse %}
+                {% set article = post.data %}
+                {% if  loop.index0 < 3 %}
+                {# {% set extension = regExp.exec(article.file) %} #}
+                <div class="news-block col-lg-4 col-md-6 col-sm-12">
+                	<div class="inner-box wow fadeInUp" data-wow-delay="0ms">
+                    	<div class="image-box">
+                        	<figure class="image"><a href="{{article.post_type}}"><img class="lazy-image" src="/assets/images/resource/image-spacer-for-validation.png" data-src="/assets/images/steat-construction.jpeg?nf_resize=fit&w=370&h=250" alt=""></a></figure>
+                        </div>
+                        <div class="lower-content">
+                        	<div class="date">{{ article.date | postDateFormat(site[locale].locales, 'dd')}} <span class="month">{{ article.date | postDateFormat(site[locale].locales, 'LLL')}}</span></div>
+                            <h3><a href="{{article.post_type}}">{{ article.post_type | i18n }} </a></h3>
+                            <div class="text">{{ article.title | truncate(60, true, "...")  }}</div>
+                            <div class="post-meta">
+                            	<ul class="clearfix">
+                                	<li><a href="#"><span class="icon fa fa-calendar"></span> {{ article.date | postDate(site[locale].locales) }}</a></li>
+                                    <li><a href="{{ article.file }} " target="_blank"><span class="icon fa fa-file-{{ article.file | getExt }}"></span> {{ article.file | getExt }}</a></li>
+                                    <li><a href="#"><span class="icon fa fa-share-alt"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                
+            </div>
+            
+        </div>
+    </section>

@@ -1,0 +1,57 @@
+   <!--posts section-->
+    <section class="cart-section">
+        <div class="auto-container">
+            <!--Cart Outer-->
+            <div class="cart-outer">
+                <div class="table-column">
+                    <div class="inner-column">
+                        <div class="table-outer">
+                            <div class="table-box">
+                                <table class="post-table">
+                                    <thead class="cart-header">
+                                        <tr>
+                                            <th class="prod-column">{{ 'date' | i18n }}</th>
+                                            <th class="price">{{ 'title' | i18n }}</th>
+                                            <th>{{ 'link' | i18n }}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% set regExp = r/\.[0-9a-z]+$/g %}
+                                        {% set extension = regExp.exec(article.file) %}
+                                        {# {{ collections.posts[post_type] | console }} #}
+                                        {% for post in collections.posts | filteredByPost_type(postType, locale)  | reverse %}
+                                        {% set article = post.data %}
+                                        <tr>
+                                            <td class="date">{{ article.date  | postDate(site[locale].locales)}}</td>
+                                            <td class="prod-column">
+                                                <div class="column-box">
+                                                    
+                                                    <h4 class="prod-title">{{article.title }}</h4>
+                                                    <p> {{ article.subtitle}} </p>
+
+                                                </div>
+                                            </td>
+                                            <td class="button-link">
+                                                <a href="{{article.file}}" target="_blank" class="theme-btn btn-style-two"><span class="icon fa fa-file-{{ article.file | getExt }}"></span> {{ article.file | getExt }}</a>
+                                                {%- if article.file2 %}
+                                                    <a href="{{article.file2}}" target="_blank" class="theme-btn btn-style-two"><span class="icon fa fa-file-{{ article.file | getExt }}"></span> {{ article.file | getExt }}</a>
+                                                {%- endif %}
+                                                {%- if article.file3 %}
+                                                    <a href="{{article.file3}}" target="_blank" class="theme-btn btn-style-two"><span class="icon fa fa-file-{{ article.file | getExt }}"></span> {{ article.file | getExt }}</a>
+                                                {%- endif %}
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- posts section-->

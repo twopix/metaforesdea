@@ -1,0 +1,58 @@
+{%- set cls = cycler("odd", "even") -%}
+ <!--Members-->
+    <section class="about-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-md-6 col-sm-12">
+                <ul class="accordion-box clearfix">
+                    {%- for member in collections.members -%}{# {{ member.data | console | safe }} #}
+                    {%- if loop.index <= (loop.length/2) %}{% set mbr = member.data[locale] -%}
+                        <!--Block-->
+                        <li class="accordion block {% if loop.first %} active-block {% endif %}">
+                            <div class="acc-btn {% if loop.first %} active{% endif %}">{{mbr.title}} </div>
+                            <div class="acc-content {% if loop.first %} current{% endif %}">
+                                <div class="content">
+                                    <div class="text">
+                                        <ul class="info clearfix">
+                                            <li><span class="icon fa fa-map-marker-alt"></span> {{mbr.address}}</li>
+                                            <li><span class="icon fa fa-phone"></span> {{mbr.phone }}</li>
+                                            <li><span class="icon fa fa-envelope"></span> {{mbr.email | urlize | safe}}</li>
+                                            {%- if mbr.url -%} <li><span class="icon fa fa-globe"></span> {{mbr.url | urlize | safe  }}</li> {%- endif -%}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> 
+                        {%- endif -%}
+                    {%- endfor -%}                                        
+                </ul>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                <ul class="accordion-box clearfix">
+                    {%- for member in collections.members -%}
+                    {%- if loop.index > (loop.length/2) -%}
+                    {%- set mbr = member.data[locale] -%}
+                        <!--Block-->
+                        <li class="accordion block {% if loop.first %} active-block {% endif %}">
+                            <div class="acc-btn {% if loop.first %} active{% endif %}">{{mbr.title}} </div>
+                            <div class="acc-content {% if loop.first %} current{% endif %}">
+                                <div class="content">
+                                    <div class="text">
+                                        <ul class="info clearfix">
+                                            <li><span class="icon fa fa-map-marker-alt"></span> {{mbr.address}}</li>
+                                            <li><span class="icon fa fa-phone"></span> {{mbr.phone }}</li>
+                                            <li><span class="icon fa fa-envelope"></span> {{mbr.email | urlize | safe}}</li>
+                                            {%- if mbr.url -%} <li><span class="icon fa fa-globe"></span> {{mbr.url | urlize | safe  }}</li> {%- endif -%}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li> 
+                        {%- endif -%}
+                    {%- endfor -%}                                        
+                </ul>
+                </div>
+            </div>            
+            <div class="bottom-image"><img class="lazy-image" src="/assets/images/resource/image-spacer-for-validation.png" data-src="images/resource/services-bottom-image.png" alt=""></div>
+        </div>
+    </section>

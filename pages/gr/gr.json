@@ -1,0 +1,10 @@
+{
+  "locale": "gr",
+  "permalink": "{{ page.fileSlug }}/",
+
+  "eleventyNavigation":[{  
+        "key": "Pages",
+        "parent": "gr",
+        "order": 4
+    }]
+}

@@ -1,0 +1,74 @@
+{%- set mbrs = "Members" | i18n  -%}
+{%- set brd = "Board" | i18n  -%}
+{%- set news = "Announcements" | i18n  -%}
+
+
+{%- set member = collections.all | eleventyNavigationBreadcrumb(mbrs, { includeSelf: true }) | last -%}
+{%- set board = collections.all | eleventyNavigationBreadcrumb(brd, { includeSelf: true }) | last -%}
+{%- set announcements = collections.all | eleventyNavigationBreadcrumb(news, { includeSelf: true }) | last -%}
+
+
+<!--About Section-->
+    <section class="about-section">
+    	<div class="top-rotten-curve"></div>
+        <div class="bottom-rotten-curve"></div>
+        <div class="circle-one"></div>
+        <div class="circle-two"></div>
+        
+        <div class="auto-container">
+        	<div class="row clearfix">
+            	<!--Left Column-->
+                <div class="left-column col-lg-6 col-md-12 col-sm-12">
+                	<div class="inner">
+                    	<div class="sec-title">
+                        	<div class="sub-title">{{"About Us" | i18n}}</div>
+                            <h2>{{settings[locale].title}}</h2>
+                            <div class="text">{{ settings[locale].description }}</div>
+							<div class="link-box clearfix"><a href="about" class="theme-btn btn-style-one"><span class="btn-title">{{'read more' | i18n}}</span></a></div>
+                        </div>
+                    </div>
+                </div>
+                <!--Right Column-->
+                <div class="right-column col-lg-6 col-md-12 col-sm-12">
+                	<div class="inner">
+                    	<div class="row clearfix">
+                        	<!--About Feature-->
+                            <div class="about-feature col-md-6 col-sm-12">
+                            	<div class="inner-box wow fadeInUp">
+                                	<div class="icon-box"><span class="flaticon-donation-1"></span></div>
+                                    <h4>{{ mbrs }}</h4>
+                                    
+                                    <a href="{{member.url}}" class="over-link"></a>
+                                </div>
+                            </div>
+                            <!--About Feature-->
+                            <div class="about-feature col-md-6 col-sm-12">
+                            	<div class="inner-box wow fadeInUp" data-wow-delay="300ms">
+                                	<div class="icon-box"><span class="flaticon-users"></span></div>
+                                    <h4>{{brd}}</h4>
+                                    <a href="{{board.url}} " class="over-link"></a>
+                                </div>
+                            </div>
+                            <!--About Feature-->
+                            <div class="about-feature col-md-6 col-sm-12">
+                            	<div class="inner-box wow fadeInUp">
+                                	<div class="icon-box"><span class="flaticon-edit-document"></span></div>
+                                    <h4>{{news}}</h4>
+                                    <a href="{{announcements.url}}" class="over-link"></a>
+                                </div>
+                            </div>
+                            <!--About Feature-->
+                            <div class="about-feature col-md-6 col-sm-12">
+                            	<div class="inner-box wow fadeInUp" data-wow-delay="300ms">
+                                	<div class="icon-box"><span class="flaticon-fax-with-phone"></span></div>
+                                    <h4>{{"contact" | i18n }}</h4>
+                                    <a href="{{contactObj.url}} " class="over-link"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
