@@ -1,6 +1,6 @@
-# STEAT [![Netlify Status](https://api.netlify.com/api/v1/badges/480fde0b-7a63-425a-b8d0-959e81d4c339/deploy-status)](https://app.netlify.com/sites/steat/deploys)
+# metaforesdea [![Netlify Status](https://api.netlify.com/api/v1/badges/480fde0b-7a63-425a-b8d0-959e81d4c339/deploy-status)](https://app.netlify.com/sites/metaforesdea/deploys)
 
-<img src="./assets/images/steat-horizontal.svg" alt="steat" width="200" />
+<img src="./assets/images/metaforesdea-horizontal.svg" alt="metaforesdea" width="200" />
 
 The SPA site uses 11ty, netlify for deploying and netlify cms for editing and publishing
 
@@ -24,44 +24,6 @@ npm debug
 ## Permalinks
 
 For greek we use / in permalinks as it the default language
-
-## Plugins
-[Eleventy plugin i18n](https://www.npmjs.com/package/eleventy-plugin-i18n) for multilanguage
-
-
-### Usage: 
-Use this in `.eleventy.js`  for default translation
-``` 
-// .eleventy.js
-const i18n = require('eleventy-plugin-i18n');
-const translations = require('./_data/i18n');
-
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(i18n, {
-    translations,
-    fallbackLocales: {
-      '*': 'gr'
-    }
-  });
-};
-```
-
-```
-// _data/i18n/index.js
-module.exports = {
-  hello: {
-    'en': 'Hello',
-    'gr': 'Γειά σου!'
-  }
-};
-```
-
-How to translate
-```
-{{ 'hello' | i18n }}
-```
-
-https://www.npmjs.com/package/eleventy-plugin-i18n
 
 
 Eleventy Navigation
